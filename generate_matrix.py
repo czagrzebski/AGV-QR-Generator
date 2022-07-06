@@ -67,6 +67,6 @@ while True:
 
     draw.rectangle(((104, 104),(526, 526)), outline='Black', width=50)
 
-    template.save(f'{cell_id}.jpg', quality=100)
+    template.save(f'{cell_id}.jpg', quality=95)
 
-    print('Processing Complete \n')
+    print('Datamatrix Generation Complete \n')
