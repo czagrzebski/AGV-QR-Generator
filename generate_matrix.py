@@ -9,7 +9,7 @@ from pylibdmtx.pylibdmtx import encode
 from PIL import Image, ImageFont, ImageDraw
 import sys
 
-print("Geek+ Datamatrix Generator for Grid Localization")
+print("Geek Datamatrix Generator for Grid Localization")
 
 while True:
   
