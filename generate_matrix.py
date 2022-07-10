@@ -1,5 +1,5 @@
 """
-Geek AGV Datamatrix Generator for Grid Localization
+AGV Data Matrix Generator for Grid Localization
 
 Author: Creed Zagrzebski (czagrzebski@gmail.com)
 
@@ -9,7 +9,7 @@ from pylibdmtx.pylibdmtx import encode
 from PIL import Image, ImageFont, ImageDraw
 import sys
 
-print("Geek Datamatrix Generator for Grid Localization")
+print("Data Matrix Generator for Grid Localization")
 
 while True:
   
@@ -30,7 +30,6 @@ while True:
     for i in range(0,data_matrix_img.width):
         for j in range(0,data_matrix_img.height):
             data = data_matrix_img.getpixel((i,j))
-            #print(data) #(255, 255, 255)
             if (data[0]==255 and data[1]==255 and data[2]==255):
                 data_matrix_img.putpixel((i,j),(244,240,223))
 
@@ -60,13 +59,13 @@ while True:
     draw.text((20, template.width - 70), "GJ", font=fnt, fill=(0, 0, 0))
 
     # draw alignment guides
-    draw.line([(template.width / 2, 0 ), (template.width / 2, 70)], width=2, fill="BLACK")
-    draw.line([(template.width, template.height / 2 ), (template.width - 70, template.height / 2)], width=2, fill="BLACK")
-    draw.line([(template.width / 2, template.height ), (template.width / 2, template.height - 70)], width=2, fill="BLACK")
-    draw.line([(0, template.height / 2 ), (70, template.height / 2)], width=2, fill="BLACK")
+    draw.line([(template.width / 2, 0 ), (template.width / 2, 70)], width=1, fill="BLACK")
+    draw.line([(template.width, template.height / 2 ), (template.width - 70, template.height / 2)], width=1, fill="BLACK")
+    draw.line([(template.width / 2, template.height ), (template.width / 2, template.height - 70)], width=1, fill="BLACK")
+    draw.line([(0, template.height / 2 ), (70, template.height / 2)], width=1, fill="BLACK")
 
     draw.rectangle(((104, 104),(526, 526)), outline='Black', width=50)
 
     template.save(f'{cell_id}.jpg', quality=95)
 
-    print('Datamatrix Generation Complete \n')
+    print('Data Matrix Generation Complete \n')
